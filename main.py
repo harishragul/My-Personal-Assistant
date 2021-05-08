@@ -107,36 +107,6 @@ def run_Hardin():
         time()
         weather()
 
-    elif 'light' in command:
-        command = command.replace('light', '')
-        if 'on' in command:
-            serialcomm = serial.Serial('/dev/ttyACM0', 9600)
-            serialcomm.timeout = 1
-            S = True
-            while S == True:
-                i = command.strip()
-                if i == 'done':
-                    print('finished program')
-                    break
-                serialcomm.write(i.encode())
-                #time.sleep(0.5)
-                print(serialcomm.readline().decode('ascii'))
-                S=False
-            serialcomm.close()
-        elif 'off' in command:
-            serialcomm = serial.Serial('/dev/ttyACM0', 9600)
-            serialcomm.timeout = 1
-            while True:
-                i = command.strip()
-                if i == 'done':
-                    print('finished program')
-                    break
-                serialcomm.write(i.encode())
-                #time.sleep(0.5)
-                print(serialcomm.readline().decode('ascii'))
-                #break
-            serialcomm.close()
-
     elif 'who is Hardin' in command:
         talk('I am hardin')
 
