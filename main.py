@@ -17,7 +17,7 @@ def time():
 def weather():
     BASE_URL = "https://api.openweathermap.org/data/2.5/weather?"
     CITY = 'Perambalur'
-    O_W_API_KEY = 'a399782d1a14d173b3c6a32101920f60'
+    O_W_API_KEY = 'Your API KEY'
     URL = BASE_URL + "q=" + CITY + "&appid=" + O_W_API_KEY
     response = requests.get(URL)
     if response.status_code == 200:
